@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemadesigner version="6.5">
+<source>
+<database charset="utf8" collation="utf8_general_ci">phalconboard</database>
+</source>
+<canvas zoom="100">
+<tables>
+<table name="categories" view="colnames">
+<left>250</left>
+<top>669</top>
+<width>190</width>
+<height>137</height>
+<sql_create_table>CREATE TABLE `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(127) DEFAULT NULL,
+  `slug` varchar(127) DEFAULT NULL,
+  `number_posts` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Categories_slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="posts" view="colnames">
+<left>49</left>
+<top>51</top>
+<width>143</width>
+<height>389</height>
+<sql_create_table>CREATE TABLE `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `users_id` int(10) unsigned DEFAULT NULL,
+  `categories_id` int(10) unsigned DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `slug` varchar(512) DEFAULT NULL,
+  `number_views` int(10) unsigned NOT NULL DEFAULT '0',
+  `number_replies` int(10) unsigned NOT NULL DEFAULT '0',
+  `votes_up` int(10) unsigned NOT NULL DEFAULT '0',
+  `votes_down` int(10) NOT NULL DEFAULT '0',
+  `is_sticked` tinyint(4) DEFAULT '0',
+  `modified_at` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_at` int(10) unsigned NOT NULL DEFAULT '0',
+  `edited_at` int(10) unsigned NOT NULL DEFAULT '0',
+  `status` char(1) NOT NULL DEFAULT 'A',
+  `is_locked` tinyint(4) NOT NULL DEFAULT '0',
+  `is_deleted` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `posts_userid` (`users_id`),
+  KEY `posts_category_id` (`categories_id`),
+  KEY `posts_slug` (`slug`(255)),
+  KEY `posts_created_at` (`created_at`),
+  CONSTRAINT `posts_to_categories_id` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`),
+  CONSTRAINT `posts_to_users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="postreplies" view="colnames">
+<left>255</left>
+<top>36</top>
+<width>174</width>
+<height>277</height>
+<sql_create_table>CREATE TABLE `postreplies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `posts_id` int(10) unsigned NOT NULL,
+  `users_id` int(10) unsigned NOT NULL,
+  `contents` varchar(4096) DEFAULT NULL,
+  `created_at` int(10) unsigned DEFAULT NULL,
+  `modified_at` int(10) unsigned DEFAULT NULL,
+  `edited_at` int(10) unsigned DEFAULT NULL,
+  `votes_up` int(11) NOT NULL DEFAULT '0',
+  `votes_down` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `PostReplies_posts_id` (`posts_id`),
+  KEY `PostReplies_users_id` (`users_id`),
+  CONSTRAINT `postreplies_to_posts_id` FOREIGN KEY (`posts_id`) REFERENCES `posts` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="users" view="colnames">
+<left>262</left>
+<top>335</top>
+<width>156</width>
+<height>301</height>
+<sql_create_table>CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(127) NOT NULL,
+  `password` varchar(127) NOT NULL DEFAULT '1111',
+  `nick` varchar(127) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `created_at` int(10) unsigned DEFAULT NULL,
+  `modified_at` int(10) unsigned DEFAULT NULL,
+  `timezone` varchar(32) DEFAULT '-',
+  `is_banned` tinyint(4) NOT NULL DEFAULT '0',
+  `status` char(4) NOT NULL DEFAULT 'A',
+  `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+<table name="remember_tokens" view="colnames">
+<left>492</left>
+<top>37</top>
+<width>127</width>
+<height>163</height>
+<sql_create_table>CREATE TABLE `remember_tokens` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `users_id` int(10) unsigned NOT NULL,
+  `token` varchar(32) DEFAULT NULL,
+  `useragent` varchar(128) DEFAULT NULL,
+  `create_at` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `remember_tokens_users_id_token` (`users_id`,`token`),
+  CONSTRAINT `remembertokens_users_id` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8</sql_create_table>
+</table>
+</tables>
+</canvas>
+</schemadesigner>

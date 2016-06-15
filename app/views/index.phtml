@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>phalconboard</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,800&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/shop.style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="/assets/css/headers/header-v5.css">
+	<link rel="stylesheet" href="/assets/css/footers/footer-v4.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="/assets/plugins/animate.css">
+	<link rel="stylesheet" href="/assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="/assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="/assets/plugins/revolution-slider/rs-plugin/css/settings.css">
+
+	<!-- CSS Page Style -->
+
+	
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="/assets/css/theme-colors/light.css" id="style_color">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+
+<body class="header-fixed">
+<div class="wrapper">
+	<!--=== Header v5 ===-->
+	<div class="header-v5 header-static">
+		<!-- Topbar v3 -->
+		<div class="topbar-v3">
+			<div class="search-open">
+				<div class="container">
+					<input type="text" class="form-control" placeholder="Search">
+					<div class="search-close"><i class="icon-close"></i></div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<!-- Topbar Navigation -->
+						<ul class="left-topbar">
+							<li>
+								<a>Phalconboard</a>
+							</li>
+						</ul><!--/end left-topbar-->
+					</div>
+					<div class="col-sm-6">
+						<ul class="list-inline right-topbar pull-right">
+							<li><a href="#">Account</a></li>
+							<li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
+							<li><a href="/login">로그인</a> | <a href="/register">가입</a></li>
+							<li><i class="search fa fa-search search-button"></i></li>
+						</ul>
+					</div>
+				</div>
+			</div><!--/container-->
+		</div>
+		<!-- End Topbar v3 -->
+	</div>
+</div>
+	<?php echo $this->getContent() ?>
+
+
+
+<!-- JS Global Compulsory -->
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script src="assets/plugins/back-to-top.js"></script>
+<script src="assets/plugins/smoothScroll.js"></script>
+<script src="assets/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+<!-- JS Page Level -->
+<script src="assets/js/shop.app.js"></script>
+<script src="assets/js/forms/page_login.js"></script>
+<script src="assets/js/plugins/style-switcher.js"></script>
+<script src="assets/js/forms/page_contact_form.js"></script>
+<script>
+	jQuery(document).ready(function() {
+		App.init();
+		Login.initLogin();
+		App.initScrollBar();
+		StyleSwitcher.initStyleSwitcher();
+		PageContactForm.initPageContactForm();
+	});
+</script>
+<!--[if lt IE 9]>
+<script src="assets/plugins/respond.js"></script>
+<script src="assets/plugins/html5shiv.js"></script>
+<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/sky-forms-ie8.js"></script>
+<![endif]-->
+<!--[if lt IE 10]>
+<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+<![endif]-->
+</body>
+</html>

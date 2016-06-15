@@ -1,0 +1,46 @@
+<?php
+/**
+ * Created by pentabot.com
+ * User: Roh Kyoung-Min
+ * Date: 2016-05-27
+ * Time: 오후 9:43
+ */
+?><?php echo $this->getContent() ?>
+
+<?php echo $this->tag->form(array("login", "autocomplete" => "off")) ?>
+
+<div align="center">
+    <h1>로그인</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="username">Username</label>
+        </td>
+        <td align="left">
+            <?php echo Phalcon\Tag::textField(array("username", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="password">Password</label>
+        </td>
+        <td align="left">
+            <?php echo Phalcon\Tag::textField(array("password", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="nick">Remember</label>
+        </td>
+        <td align="left">
+            <?php echo Phalcon\Tag::checkField(array("remember", "value" => "Y")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><?php echo Phalcon\Tag::submitButton("로그인") ?></td>
+    </tr>
+</table>
+<?php echo Phalcon\Tag::endForm() ?>

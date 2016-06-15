@@ -1,0 +1,114 @@
+
+<?php echo $this->getContent() ?>
+
+<div align="right">
+    <?php echo $this->tag->linkTo(array("users/new", "Create users")) ?>
+</div>
+
+<?php echo $this->tag->form(array("users/search", "autocomplete" => "off")) ?>
+
+<div align="center">
+    <h1>Search users</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="id">Id</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("id", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="username">Username</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("username", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="password">Password</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("password", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="nick">Nick</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("nick", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="email">Email</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("email", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="created_at">Created</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("created_at", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="modified_at">Modified</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("modified_at", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="timezone">Timezone</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("timezone", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="is_banned">Is Of Banned</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("is_banned", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="status">Status</label>
+        </td>
+        <td align="left">
+                <?= Phalcon\Tag::selectStatic(array("status", array())) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="is_deleted">Is Of Deleted</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("is_deleted", "type" => "number")) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Button
+            </button>
+            <?php echo $this->tag->submitButton("Search") ?></td>
+    </tr>
+</table>
+
+</form>

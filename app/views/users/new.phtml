@@ -1,0 +1,105 @@
+
+<?php echo $this->tag->form("users/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("users", "Go Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    </tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create users</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="username">Username</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("username", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="password">Password</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("password", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="nick">Nick</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("nick", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="email">Email</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("email", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="created_at">Created</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("created_at", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="modified_at">Modified</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("modified_at", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="timezone">Timezone</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("timezone", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="is_banned">Is Of Banned</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("is_banned", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="status">Status</label>
+        </td>
+        <td align="left">
+                <?= Phalcon\Tag::selectStatic(array("status", array())) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="is_deleted">Is Of Deleted</label>
+        </td>
+        <td align="left">
+            <?= Phalcon\Tag::textField(array("is_deleted", "type" => "number")) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><?php echo $this->tag->submitButton("Save") ?></td>
+    </tr>
+</table>
+
+</form>
