@@ -16,6 +16,7 @@ use Phalcon\Mvc\View\Simple;
  * @method Simple getPosts($parameters=null)
  * @method static Users findFirstById(int $id)
  * @method static Users findFirstByUsername(string $username)
+ * @method static Users findFirstByEmail(string $email)
  * @method static Users[] find($parameters=null)
   */
 class Users extends ModelBase

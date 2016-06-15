@@ -12,7 +12,12 @@ aim:
 
 Korean style bulletin board system.
 
+
+##author
+http://pentabot.com
+
+
 The project is under developing
 
-http://pentabot.com
+
 
