@@ -13,7 +13,7 @@ aim:
 Korean style bulletin board system.
 
 
-##author
+####author
 http://pentabot.com
 
 
